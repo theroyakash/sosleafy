@@ -40,5 +40,7 @@ while True:
         tweet()
         break
     except:
-        tweet()
-        
+        try:
+            tweet()
+        except:
+            print("Failed to tweet  unique tweet 2 times so escaping")
