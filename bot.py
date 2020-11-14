@@ -13,6 +13,9 @@ auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
 auth.set_access_token(ACCESS_TOKEN, SECRET_ACCESS_TOKEN)
 api = tweepy.API(auth)
 
+import time
+random.seed(time.time())
+
 def tweet():
     india_news = 'https://raw.githubusercontent.com/theroyakash/newsapis/main/india_news.json'
     us_news = 'https://raw.githubusercontent.com/theroyakash/newsapis/main/us_news.json'
@@ -35,12 +38,8 @@ def tweet():
     api.update_status(f"{india_title} is available here: {india_url}")
     api.update_status(f"{us_title} is available here: {us_url}")
 
-while True:
+if __name__ == "__main__":
     try:
         tweet()
-        break
     except:
-        try:
-            tweet()
-        except:
-            print("Failed to tweet  unique tweet 2 times so escaping")
+        print("Error Running the program")
