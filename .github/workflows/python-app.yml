@@ -22,6 +22,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Post to twitter
+    - name: Post to twitter and telegram
       run: |
         python3 bot.py
+        python3 telegrampost.py
