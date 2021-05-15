@@ -36,8 +36,8 @@ def tweet():
     india_title = india_randomarticle["title"]
     india_url = india_randomarticle["url"]
 
-    api.update_status(f"{india_title} {india_url}")
-    api.update_status(f"{us_title} {us_url}")
+    api.update_status(f"{india_title} #news #headlines #india #IndiaNews {india_url}")
+    api.update_status(f"{us_title} #news #headlines #USNews {us_url}")
 
 
 if __name__ == "__main__":
