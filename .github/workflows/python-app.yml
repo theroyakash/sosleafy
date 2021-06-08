@@ -4,6 +4,8 @@
 name: Python application
 
 on:
+  push:
+    branches: [ main ]
   schedule:
     - cron: '0 */3 * * *'
 
@@ -23,6 +25,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Update the github repo
+      run: |
+        python updatedata.py
     - name: Post to twitter and telegram
       run: |
         python3 bot.py
